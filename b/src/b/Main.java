@@ -52,7 +52,7 @@ public class Main {
             for (int num : list) {
                 System.out.print(num + " ");
             }
-            System.out.println();
+            System.out.println(); 
         }
     }
 
@@ -78,6 +78,6 @@ public class Main {
         printList(myList);
 
         // Функц 6: List-ийн дарааллаар утгуудыг хэвлэх
-        iterateList(myList);
+        iterateList(myList);     //5:00
     }
 }
