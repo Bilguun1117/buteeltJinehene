@@ -69,9 +69,10 @@ public class Main {
 
         // Функц 3: Элемент устгах
         removeElement(myList, 0);
-
+        
         // Функц 4: Элемент хайх
         searchElement(myList, 10);
+        
 
         // Функц 5: List-ийн утгыг хэвлэх
         printList(myList);
