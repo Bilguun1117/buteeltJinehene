@@ -2,22 +2,22 @@ package b;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Main<T> {
     // Функц 1: List үүсгэх
-    public static List<Integer> createList() {
+    public static <T> List<T> createList() {
         return new ArrayList<>();
     }
 
     // Функц 2: Элемент нэмэх
-    public static void addElement(List<Integer> list, int element) {
+    public static <T> void addElement(List<T> list, T element) {
         list.add(element);
         System.out.println("Элемент " + element + " нэмэгдлээ.");
     }
 
     // Функц 3: Элемент устгах
-    public static void removeElement(List<Integer> list, int index) {
+    public static <T> void removeElement(List<T> list, int index) {
         if (index >= 0 && index < list.size()) {
-            int removedElement = list.remove(index);
+            T removedElement = list.remove(index);
             System.out.println("Элемент " + removedElement + " устгагдлаа.");
         } else {
             System.out.println("Алдаа: Индекс буруу байна!");
@@ -25,7 +25,7 @@ public class Main {
     }
 
     // Функц 4: Элемент хайх
-    public static void searchElement(List<Integer> list, int element) {
+    public static <T> void searchElement(List<T> list, T element) {
         int index = list.indexOf(element);
         if (index != -1) {
             System.out.println("Элемент " + element + " индекс: " + index);
@@ -35,49 +35,52 @@ public class Main {
     }
 
     // Функц 5: List-ийн утгыг хэвлэх
-    public static void printList(List<Integer> list) {
+    public static <T> void printList(List<T> list) {
         if (list.isEmpty()) {
             System.out.println("List хоосон байна.");
         } else {
-            System.out.println("List: " + list);
+            System.out.print("List: ");
+            for (T item : list) {
+                System.out.print(item + " ");
+            }
+            System.out.println();
         }
     }
 
     // Функц 6: List-ийн дарааллаар утгуудыг хэвлэх
-    public static void iterateList(List<Integer> list) {
+    public static <T> void iterateList(List<T> list) {
         if (list.isEmpty()) {
             System.out.println("List хоосон байна.");
         } else {
             System.out.print("List-ийн утгууд: ");
-            for (int num : list) {
-                System.out.print(num + " ");
+            for (T item : list) {
+                System.out.print(item + " ");
             }
-            System.out.println(); 
+           
         }
     }
-
+    
+   
     
     
     public static void main(String[] args) {
-        // Функц 1: List үүсгэх
-        List<Integer> myList = createList();
-
-        // Функц 2: Элемент нэмэх
-        addElement(myList, 10);
-        addElement(myList, 20);
-        addElement(myList, 30);
-
-        // Функц 3: Элемент устгах
-        removeElement(myList, 0);
+        List<String> list = createList();
         
-        // Функц 4: Элемент хайх
-        searchElement(myList, 10);
         
+        addElement(list, "10");
+        addElement(list, "121" );
+        addElement(list, "sdsad");
+       
+        removeElement(list, 0);
+        
+       
 
-        // Функц 5: List-ийн утгыг хэвлэх
-        printList(myList);
+        printList(list);
 
-        // Функц 6: List-ийн дарааллаар утгуудыг хэвлэх
-        iterateList(myList);     //5:00
+        iterateList(list);
+        
+        // Объектын тодорхойлолтыг хэвлэх
+        Main<Integer> main = new Main<>();
+        System.out.println(main);
     }
 }
