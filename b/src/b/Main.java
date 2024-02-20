@@ -1,7 +1,7 @@
 package b; 
 import java.util.ArrayList;
 import java.util.List;
-
+kd
 public class Main<T> {
     // Функц 1: List үүсгэх
     public static <T> List<T> createList() {
