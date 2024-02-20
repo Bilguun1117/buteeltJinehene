@@ -23,7 +23,7 @@ public class Main<T> {
             System.out.println("Алдаа: Индекс буруу байна!");
         }
     }
-
+knsd
     // Функц 4: Элемент хайх
     public static <T> void searchElement(List<T> list, T element) {
         int index = list.indexOf(element);
