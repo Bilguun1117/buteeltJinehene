@@ -1,7 +1,7 @@
 package b; 
 import java.util.ArrayList;
 import java.util.List;
-kd
+
 public class Main<T> {
     // Функц 1: List үүсгэх
     public static <T> List<T> createList() {
@@ -64,23 +64,20 @@ public class Main<T> {
     
     
     public static void main(String[] args) {
-        List<String> list = createList();
+        List list = createList();
         
         
-        addElement(list, "10");
+        addElement(list, 10);
         addElement(list, "121" );
         addElement(list, "sdsad");
        
         removeElement(list, 0);
-        
-       
-
         printList(list);
 
         iterateList(list);
         
         // Объектын тодорхойлолтыг хэвлэх
         Main<Integer> main = new Main<>();
-        System.out.println(main);
+       
     }
 }
